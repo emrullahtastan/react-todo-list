@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $true-blue;
+  padding: 10px 50px;
+  align-items: center;
+
+  &__brand {
+    font-weight: 500;
+    color: $white;
+  }
+
+  &__search-area {
+    max-width: 400px;
+    width: 100%;
+    height: 32px;
+    display: inherit;
+
+    &__item {
+      &__button {
+        &__icon {
+          transform: scaleX(-1);
+
+        }
+      }
+    }
+
+    &__input {
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      /*background-color: $beau-blue;*/
+      /*border-radius: 2px;*/
+      box-sizing: border-box;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+  }
+
+}
