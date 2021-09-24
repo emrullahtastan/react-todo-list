@@ -2,6 +2,10 @@ import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import {faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faCog} from "@fortawesome/free-solid-svg-icons";
+import {faQuestion} from "@fortawesome/free-solid-svg-icons";
+import {faBullhorn} from "@fortawesome/free-solid-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
 
 export class Header extends React.Component {
     constructor(props) {
@@ -73,10 +77,26 @@ export class Header extends React.Component {
                 </div>
 
                 <div className={"header__right-side"}>
-                    <div>x</div>
-                    <div>?</div>
-                    <div>an</div>
-                    <div>usr</div>
+                    <div className={"header__right-side__item"}>
+                        <button className={"header__right-side__item__button"}>
+                            <FontAwesomeIcon className={"header__right-side__item__button__icon"} icon={faCog}/>
+                        </button>
+                    </div>
+                    <div className={"header__right-side__item"}>
+                        <button className={"header__right-side__item__button"}>
+                            <FontAwesomeIcon className={"header__right-side__item__button__icon"} icon={faQuestion}/>
+                        </button>
+                    </div>
+                    <div className={"header__right-side__item"}>
+                        <button className={"header__right-side__item__button"}>
+                            <FontAwesomeIcon className={"header__right-side__item__button__icon"} icon={faBullhorn}/>
+                        </button>
+                    </div>
+                    <div className={"header__right-side__item"}>
+                        <button className={"header__right-side__item__button"}>
+                            <FontAwesomeIcon className={"header__right-side__item__button__icon"} icon={faUser}/>
+                        </button>
+                    </div>
                 </div>
             </div>
         )

@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-between;
   background-color: $true-blue;
-  padding: 10px 50px;
+  padding-left:50px;
   align-items: center;
+  height: 48px;
+  max-height: 48px;
 
   &__brand {
     font-weight: 500;
@@ -16,11 +18,11 @@
     height: 32px;
     display: inherit;
     border-radius: 2px;
-    overflow:hidden;
+    overflow: hidden;
 
-    &__tooltip{
+    &__tooltip {
       position: absolute;
-      margin-left:-65px;
+      margin-left: -65px;
       z-index: 11;
       display: flex;
       align-items: center;
@@ -29,7 +31,7 @@
       @include fade-in-scope;
       //end: fade
 
-      &-main{
+      &-main {
         background-color: $white;
         border-radius: 2px;
         overflow: hidden;
@@ -38,10 +40,11 @@
         justify-content: center;
         height: 32px;
         padding: 0 10px;
-        font-size:12px;
+        font-size: 12px;
         box-shadow: 1px 1px #00000063;
       }
-      &-right-arrow{
+
+      &-right-arrow {
         width: 0;
         height: 0;
         border-style: solid;
@@ -55,20 +58,24 @@
     &__item {
       background-color: $beau-blue;
       display: flex;
+
       &__button {
         background-color: transparent;
         border: none;
         display: flex;
         align-items: center;
+
         &__icon {
           transform: scaleX(-1);
           color: $true-blue;
         }
-        &:hover{
+
+        &:hover {
           background-color: $white;
           cursor: pointer;
         }
-        &--active{
+
+        &--active {
           background-color: $white;
         }
       }
@@ -80,7 +87,7 @@
         height: 100%;
         /*background-color: $beau-blue;*/
         box-sizing: border-box;
-        padding-left:10px;
+        padding-left: 10px;
         font-weight: 300;
       }
     }
@@ -89,6 +96,22 @@
 
   &__right-side {
     display: flex;
+
+    &__item {
+      &__button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: white;
+        padding:15px;
+
+        &:hover {
+          background-color: $usafa-blue;
+        }
+      }
+    }
   }
 
 }
