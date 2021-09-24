@@ -9,23 +9,37 @@ export class Header extends React.Component {
         this.state = {searchInputVisible: false, searchInputTooltipVisible: false};
     }
 
-    searchInputMouseOver() {
-        this.setState({searchInputTooltipVisible: true})
+    searchInputMouseVisible(value) {
+        this.setState({searchInputTooltipVisible: value})
     }
 
-    searchInputMouseOut() {
-        this.setState({searchInputTooltipVisible: false})
+    searchInputVisible(value) {
+        this.setState({searchInputVisible: value})
+        if (value) {
+            let thisApp = this;
+            setTimeout(function () {
+                thisApp.searchInput.focus();
+            }, 100)
+        }
+        else
+            this.searchInput.value="";
     }
 
-    searchInputOnClick() {
-        //this.setState({searchInputVisible: true})
+    searchInputFocusOut() {
+        let thisApp = this;
+        setTimeout(function () {
+            if (document.activeElement !== thisApp.searchInput)
+                thisApp.setState({searchInputVisible: false})
+        }, 100)
     }
 
     render() {
         return (
             <div className={"header"}>
                 <div className={"header__brand"}>To Do</div>
-                <div className={"header__search-area"}>
+                <div className={"header__search-area"} onBlur={() => {
+                    this.searchInputFocusOut()
+                }}>
                     <div className={`header__search-area__tooltip ${!this.state.searchInputTooltipVisible ? "hide" : "fade-in"}`}>
                         <div className={"header__search-area__tooltip-main"}>
                             Search
@@ -33,18 +47,25 @@ export class Header extends React.Component {
                         <div className={"header__search-area__tooltip-right-arrow"}>
                         </div>
                     </div>
-                    <div className={`header__search-area__item  ${!this.state.searchInputVisible ? "w-100" : ""}`} onMouseOver={this.searchInputMouseOver.bind(this)}
-                         onMouseOut={this.searchInputMouseOut.bind(this)} onClick={this.searchInputOnClick.bind(this)}>
-                        <button className={`header__search-area__item__button  ${!this.state.searchInputVisible ? "w-100" : ""}`}>
+                    <div className={`header__search-area__item  ${!this.state.searchInputVisible ? "w-100" : ""}`}
+                         onMouseOver={this.searchInputMouseVisible.bind(this, true)}
+                         onMouseOut={this.searchInputMouseVisible.bind(this, false)}
+                         onClick={this.searchInputVisible.bind(this, true)}
+                    >
+                        <button className={`header__search-area__item__button  
+                            ${!this.state.searchInputVisible ? "w-100" : "header__search-area__item__button--active"}`}>
                             <FontAwesomeIcon className={"header__search-area__item__button__icon"} icon={faSearch}/>
                         </button>
                     </div>
-                    <div className={`w-100 flex ${!this.state.searchInputVisible ? "hide" : ""}`}>
-                        <div className={"header__search-area__item"}>
-                            <input className={"header__search-area__item__input"}/>
+                    <div className={`header__search-area__item w-100 flex ${!this.state.searchInputVisible ? "hide" : ""}`}>
+                        <div className={"header__search-area__item w-100"}>
+                            <input className={"header__search-area__item__input"} ref={(input) => {
+                                this.searchInput = input;
+                            }}/>
                         </div>
                         <div className={`header__search-area__item  ${!this.state.searchInputVisible ? "w-100" : ""}`}>
-                            <button className={"header__search-area__item__button"}>
+                            <button className={`header__search-area__item__button  
+                            ${!this.state.searchInputVisible ? "" : "header__search-area__item__button--active"}`} onClick={this.searchInputVisible.bind(this, false)}>
                                 <FontAwesomeIcon className={"header__search-area__item__button__icon"} icon={faTimes}/>
                             </button>
                         </div>
