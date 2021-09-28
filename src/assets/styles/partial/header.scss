@@ -1,8 +1,8 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: $true-blue;
-  padding-left:50px;
+  padding-left: 10px;
   align-items: center;
   height: 48px;
   max-height: 48px;
@@ -10,6 +10,7 @@
   &__brand {
     font-weight: 500;
     color: $white;
+    width:200px;
   }
 
   &__search-area {
@@ -90,13 +91,20 @@
         padding-left: 10px;
         font-weight: 300;
       }
+
+      &-mobile {
+        border-radius: 2px;
+        margin-left:10px;
+        @include mq("tablet") {
+          width: 100%;
+        }
+      }
     }
 
   }
 
   &__right-side {
     display: flex;
-
     &__item {
       &__button {
         background-color: transparent;
@@ -105,7 +113,7 @@
         align-items: center;
         cursor: pointer;
         color: white;
-        padding:15px;
+        padding: 15px;
 
         &:hover {
           background-color: $usafa-blue;

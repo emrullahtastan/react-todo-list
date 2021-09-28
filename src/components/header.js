@@ -51,7 +51,7 @@ export class Header extends React.Component {
                         <div className={"header__search-area__tooltip-right-arrow"}>
                         </div>
                     </div>
-                    <div className={`header__search-area__item  ${!this.state.searchInputVisible ? "w-100" : ""}`}
+                    <div className={`header__search-area__item ${!this.state.searchInputVisible ? "header__search-area__item-mobile" : "" }`}
                          onMouseOver={this.searchInputMouseVisible.bind(this, true)}
                          onMouseOut={this.searchInputMouseVisible.bind(this, false)}
                          onClick={this.searchInputVisible.bind(this, true)}
