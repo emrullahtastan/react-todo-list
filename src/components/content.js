@@ -1,6 +1,6 @@
 import React from "react";
-import {LeftSideBar} from "./leftSideBar";
-import {ListSection} from "./listSection";
+import {LeftSideBar} from "./leftSideBar/leftSideBar";
+import {ListSection} from "./leftSideBar/listSection";
 
 export class Content extends React.Component {
 
