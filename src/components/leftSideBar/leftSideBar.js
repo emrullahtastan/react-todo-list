@@ -20,7 +20,7 @@ export class LeftSideBar extends React.Component {
                 </div>
                 <div className={"left-side-bar__area"}>
                     {this.state.list.map(function(object, i){
-                        return <ListItem obj={object} />;
+                        return <ListItem title={object.title} icon={object.icon} number={object.number} />;
                     })}
                     <ListItem/>
                 </div>

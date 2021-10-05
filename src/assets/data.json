@@ -1,28 +1,28 @@
 {
   "menu-items": [
     {
-      "fa-icon": "faSun",
+      "icon": "sun",
       "title": "My Day"
     },
     {
-      "fa-icon": "faStar",
+      "icon": "star",
       "title": "Important"
     },
     {
-      "fa-icon": "faCalendarAlt",
+      "icon": "calendar-alt",
       "title": "Planned",
       "number": 1
     },
     {
-      "fa-icon": "faUser",
+      "icon": "user",
       "title": "Assigned to me"
     },
     {
-      "fa-icon": "faFlag",
+      "icon": "flag",
       "title": "Flagged email"
     },
     {
-      "fa-icon": "faHome",
+      "icon": "home",
       "title": "Tasks"
     }
   ]

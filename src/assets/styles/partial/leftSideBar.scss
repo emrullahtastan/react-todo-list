@@ -8,22 +8,51 @@
 
     &__button {
       background-color: transparent;
-      border:none;
+      border: none;
       width: 32px;
       height: 32px;
-      cursor:pointer;
+      cursor: pointer;
 
       &:hover {
         background-color: $lotion;
         box-shadow: 0 0 0 1px $bright-gray;
       }
+
       &__icon {
         background-color: transparent;
         border: none;
         border-radius: 2px;
       }
     }
+  }
+}
 
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  color: $onyx;
+  font-weight: 300;
+  &:hover{
+    cursor: pointer;
+    background-color: $lotion;
+  }
 
+  &__left {
+    display: flex;
+    padding: 10px 0;
+
+    &__icon {
+      margin-right: 5px;
+      width: 32px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    &__text {
+
+    }
   }
 }
