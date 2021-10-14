@@ -25,5 +25,15 @@
       "icon": "home",
       "title": "Tasks"
     }
+  ],
+  "user-menu-items": [
+    {
+      "icon": "list",
+      "title": "Writing article"
+    },
+    {
+      "icon": "list",
+      "title": "Home notes"
+    }
   ]
 }
