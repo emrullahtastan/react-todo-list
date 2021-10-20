@@ -1,7 +1,8 @@
 .left-side-bar {
   background-color: $cultured;
   width: 290px;
-  height: 100vh;
+  height: 80vh;
+  overflow-y: auto;
 
   &__header {
     padding: 10px;
@@ -32,11 +33,13 @@
   height: 38px;
   justify-content: space-between;
   align-items: center;
+  color:$true-blue;
   &__left {
     display: flex;
     width: 90%;
-    padding:5px 12px;
-
+    padding:0 12px;
+    height: 100%;
+    align-items: center;
     &:hover{
       cursor: pointer;
       background-color: $lotion;
@@ -48,11 +51,18 @@
 
     &__input-area {
       width:90%;
+      height: 100%;
       &__input {
         background-color: transparent;
         border: none;
         outline: none;
         width:90%;
+        height: 100%;
+        &::placeholder {
+          color:$true-blue;
+          opacity: 1;
+        }
+
       }
     }
   }
@@ -60,8 +70,8 @@
   &__right {
     @extend .list-item__left__icon;
     margin-left: 5px;
-    color:$true-blue;
-    padding: 10px 5px;
+    padding: 0 10px;
+    height: 100%;
     margin-right: 0 !important;
     &:hover{
       cursor: pointer;

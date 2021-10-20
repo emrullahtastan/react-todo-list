@@ -5,7 +5,7 @@ import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 const iconList = Object
     .keys(Icons)
-    .filter(key => key !== "fas" && key !== "prefix")
+    .filter(key => key !== "fas" && key !== "prefix" && key!==null)
     .map(icon => Icons[icon])
 
 library.add(...iconList)
