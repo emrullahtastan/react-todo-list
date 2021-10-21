@@ -1,31 +1,34 @@
 .left-side-bar {
   background-color: $cultured;
   width: 290px;
-  height: 80vh;
   overflow-y: auto;
+  max-height: 95%;
+  &__top{
+    height:95%;
+    &__header {
+      padding: 10px;
 
-  &__header {
-    padding: 10px;
-
-    &__button {
-      background-color: transparent;
-      border: none;
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $lotion;
-        box-shadow: 0 0 0 1px $bright-gray;
-      }
-
-      &__icon {
+      &__button {
         background-color: transparent;
         border: none;
-        border-radius: 2px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $lotion;
+          box-shadow: 0 0 0 1px $bright-gray;
+        }
+
+        &__icon {
+          background-color: transparent;
+          border: none;
+          border-radius: 2px;
+        }
       }
     }
   }
+
 }
 
 .left-side-bar-new-list-area {

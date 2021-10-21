@@ -1,3 +1,6 @@
+html, body, #root, .App{
+  height: 100%;
+}
 body {
   font-family: "Segoe","Segoe UI","Arial","sans-serif";
   overflow: hidden;
@@ -13,4 +16,5 @@ body {
 
 .main-container{
   display: flex;
+  height: 100%;
 }
