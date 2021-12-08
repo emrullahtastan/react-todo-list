@@ -27,6 +27,24 @@
         }
       }
     }
+    &__middle{
+      max-height: 89%;
+      overflow-y: auto;
+    }
+  }
+
+  &__bottom-buttons{
+    border-top: 1px solid $bright-gray;
+    display: flex;
+    justify-content: space-between;
+
+    &__item{
+      padding: 10px 20px;
+      cursor: pointer;
+      &:hover{
+        background-color: $bright-gray;
+      }
+    }
   }
 
 }

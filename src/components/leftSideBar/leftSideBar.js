@@ -1,6 +1,6 @@
 import React from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faChevronLeft, faPlus, faFolderPlus} from '@fortawesome/free-solid-svg-icons'
+import {faChevronLeft, faPlus, faFolderPlus, faEnvelope, faCalendarAlt, faUserFriends, faPaperclip, faCheck} from '@fortawesome/free-solid-svg-icons'
 import {ListItem} from './listItem'
 import data from "../../assets/data.json";
 
@@ -16,7 +16,6 @@ export class LeftSideBar extends React.Component {
             e.target.value = "";
         }
     }
-
     render() {
         return (
             <div className={"left-side-bar"}>
@@ -54,8 +53,22 @@ export class LeftSideBar extends React.Component {
                     </div>
                 </div>
                 <div className={"left-side-bar__bottom"}>
-                    <div className={"left-side-bar__bottom-buttons"} style={{backgroundColor: "lightgreen"}}>
-                        x
+                    <div className={"left-side-bar__bottom-buttons"}>
+                        <div className={"left-side-bar__bottom-buttons__item"}>
+                            <FontAwesomeIcon icon={faEnvelope}/>
+                        </div>
+                        <div className={"left-side-bar__bottom-buttons__item"}>
+                            <FontAwesomeIcon icon={faCalendarAlt}/>
+                        </div>
+                        <div className={"left-side-bar__bottom-buttons__item"}>
+                            <FontAwesomeIcon icon={faUserFriends}/>
+                        </div>
+                        <div className={"left-side-bar__bottom-buttons__item"}>
+                            <FontAwesomeIcon icon={faPaperclip}/>
+                        </div>
+                        <div className={"left-side-bar__bottom-buttons__item"}>
+                            <FontAwesomeIcon icon={faCheck}/>
+                        </div>
                     </div>
                 </div>
             </div>
