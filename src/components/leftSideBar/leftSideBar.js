@@ -1,7 +1,7 @@
 import React from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faChevronLeft, faPlus, faFolderPlus, faEnvelope, faCalendarAlt, faUserFriends, faPaperclip, faCheck} from '@fortawesome/free-solid-svg-icons'
-import {ListItem} from './listItem'
+import {ListItem} from './listItem.js'
 import data from "../../assets/data.json";
 
 export class LeftSideBar extends React.Component {
