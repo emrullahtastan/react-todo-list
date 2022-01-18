@@ -3,11 +3,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faChevronLeft, faPlus, faFolderPlus, faEnvelope, faCalendarAlt, faUserFriends, faPaperclip, faCheck} from '@fortawesome/free-solid-svg-icons'
 import {ListItem} from './listItem.js'
 import data from "../../assets/data.json";
+import ContextMenu from "../ContextMenu";
 
 export class LeftSideBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menuList: data["menu-items"], userMenuList: data["user-menu-items"]}
+        this.state = {menuList: data["menu-items"], userMenuList: data["user-menu-items"], leftVariable: false}
     }
 
     enterValueToNewList = (e) => {
@@ -16,9 +17,17 @@ export class LeftSideBar extends React.Component {
             e.target.value = "";
         }
     }
+
+    handleContextMenu = (e) => {
+        e.preventDefault();
+        this.setState({leftVariable: true})
+
+    }
+
     render() {
         return (
-            <div className={"left-side-bar"}>
+            <div className={"left-side-bar"} >
+                <ContextMenu left={this.state.leftVariable}/>
                 <div className={"left-side-bar__top"}>
                     <div className={"left-side-bar__top__header"}>
                         <button className={"left-side-bar__top__header__button"}>
@@ -30,12 +39,25 @@ export class LeftSideBar extends React.Component {
                             {this.state.menuList.map(function (object, i) {
                                 return <ListItem key={i} title={object.title} icon={object.icon} number={object.number}/>;
                             })}
-                            <ListItem/>
                         </div>
                         <div className={"left-side-bar__area"}>
                             {this.state.userMenuList.map(function (object, i) {
-                                return <ListItem key={i} title={object.title} icon={object.icon} number={object.number}/>;
-                            })}
+                                return (
+                                    <div key={i} onContextMenu={(event) => {
+                                        this.handleContextMenu(event)
+                                    }}
+                                         onClick={() => {
+                                             this.setState({leftVariable: false})
+                                         }}
+
+                                         onMouseOut={(event) => {
+                                             this.setState({leftVariable: false})
+                                         }}
+                                    >
+                                        <ListItem title={object.title} icon={object.icon} number={object.number} contextMenuVisible={true}/>
+                                    </div>
+                                );
+                            }, this)}
                         </div>
                     </div>
                     <div className={"left-side-bar__area left-side-bar-new-list-area"}>

@@ -47,6 +47,35 @@
     }
   }
 
+  &-right-context-menu{
+    list-style-type: none;
+    background-color: $white;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: rgb(0 0 0 / 13%) 0px 3.2px 7.2px 0px, rgb(0 0 0 / 11%) 0px 0.6px 1.8px 0px;
+    outline: transparent;
+    padding:0;
+    li {
+      padding: 10px;
+      width: 200px;
+      &:hover{
+        background-color: $lotion;
+        cursor: pointer;
+      }
+    }
+
+    &__delete-item{
+      border-top: 1px solid rgba(0,0,0,0.08);
+      color:$cg-red;
+    }
+
+    &__icon{
+      margin-right:10px;
+      color: black;
+      width:20px;
+      padding:0 5px;
+    }
+  }
 }
 
 .left-side-bar-new-list-area {
