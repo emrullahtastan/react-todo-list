@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-function ContextMenu({left}) {
-    let [xPos] = useState("0px");
-    const [yPos] = useState("0px");
+function ContextMenu({left, xPos="0px", yPos="0px"}) {
     useEffect(() => {
     }, [left]);
     return (
@@ -28,7 +26,9 @@ function ContextMenu({left}) {
                 <FontAwesomeIcon className={"left-side-bar-right-context-menu__icon"} icon={"print"}/>
                 Print list
             </li>
-            <li className="left-side-bar-right-context-menu__delete-item"> Delete List</li>
+            <li className="left-side-bar-right-context-menu__delete-item">
+                <FontAwesomeIcon className={"left-side-bar-right-context-menu__delete-item__icon"} icon={"trash-alt"}/>
+                Delete List</li>
         </ul>
     );
 }

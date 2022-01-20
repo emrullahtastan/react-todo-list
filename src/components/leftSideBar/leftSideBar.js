@@ -19,15 +19,27 @@ export class LeftSideBar extends React.Component {
     }
 
     handleContextMenu = (e) => {
+        let lyPos=e.clientY;
+        if ((window.innerHeight-e.clientY)<150)
+            lyPos-=150;
+        this.setState({leftVariable: true, xPos:e.clientX, yPos: lyPos})
         e.preventDefault();
-        this.setState({leftVariable: true})
+        document.addEventListener("click", this.closeContextMenu);
+    }
 
+    closeContextMenu = () => {
+        if (this.state.leftVariable){
+            this.setState({leftVariable: false})
+            document.removeEventListener("click", this.closeContextMenu);
+        }
     }
 
     render() {
+
+
         return (
-            <div className={"left-side-bar"} >
-                <ContextMenu left={this.state.leftVariable}/>
+            <div className={"left-side-bar"}>
+                <ContextMenu left={this.state.leftVariable} xPos={this.state.xPos} yPos={this.state.yPos}/>
                 <div className={"left-side-bar__top"}>
                     <div className={"left-side-bar__top__header"}>
                         <button className={"left-side-bar__top__header__button"}>
@@ -47,10 +59,6 @@ export class LeftSideBar extends React.Component {
                                         this.handleContextMenu(event)
                                     }}
                                          onClick={() => {
-                                             this.setState({leftVariable: false})
-                                         }}
-
-                                         onMouseOut={(event) => {
                                              this.setState({leftVariable: false})
                                          }}
                                     >
