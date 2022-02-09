@@ -3,11 +3,9 @@ import {Header} from "./components/header";
 import {Content} from "./components/content";
 import {PromptContext} from "./contexts/prompt";
 import Prompt from './components/Prompt'
-
+import promptDefaultValue from "./contexts/promptDefaultValue";
 function App() {
-    const data={
-        title:'Test'
-    }
+    const data=promptDefaultValue;
     return (
         <PromptContext.Provider value={data}>
             <div className="App">

@@ -1,0 +1,25 @@
+.share-in-prompt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+  &__letter-button{
+    @extend .w-100;
+    button{
+      background-color: $ultramarine-blue;
+      border:none;
+      color:white;
+    }
+  }
+  &__letter-sub-text{
+    color:$onyx;
+    font-size:13px;
+  }
+  &__text{
+    color:$sonic-silver;
+    font-size:13px;
+  }
+
+}
