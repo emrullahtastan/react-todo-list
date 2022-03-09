@@ -1,10 +1,16 @@
 .left-side-bar {
   background-color: $cultured;
   width: 290px;
-  overflow-y: auto;
-  max-height: 95%;
-  &__top{
-    height:95%;
+  overflow-y: hidden;
+  max-height: 94%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__top {
+    height: 100%;
+
     &__header {
       padding: 10px;
 
@@ -27,60 +33,65 @@
         }
       }
     }
-    &__middle{
-      max-height: 89%;
+
+    &__middle {
+      max-height: 90%;
       overflow-y: auto;
     }
   }
 
-  &__bottom-buttons{
+  &__bottom-buttons {
     border-top: 1px solid $bright-gray;
     display: flex;
     justify-content: space-between;
 
-    &__item{
+    &__item {
       padding: 10px 20px;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         background-color: $bright-gray;
       }
     }
   }
 
-  &-right-context-menu{
+  &-right-context-menu {
     list-style-type: none;
     background-color: $white;
     box-sizing: border-box;
     border-radius: 2px;
     box-shadow: rgb(0 0 0 / 13%) 0px 3.2px 7.2px 0px, rgb(0 0 0 / 11%) 0px 0.6px 1.8px 0px;
     outline: transparent;
-    padding:0;
+    padding: 0;
+
     li {
       padding: 10px;
       width: 200px;
       color: $onyx;
-      &:hover{
+
+      &:hover {
         background-color: $lotion;
         cursor: pointer;
       }
     }
 
-    &__delete-item{
-      border-top: 1px solid rgba(0,0,0,0.08);
-      color:$cg-red !important;
-      &__icon{
-        margin-right:10px;
-        color:$cg-red;
-        width:20px;
-        padding:0 5px;
+    &__delete-item {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      color: $cg-red !important;
+
+      &__icon {
+        margin-right: 10px;
+        color: $cg-red;
+        width: 20px;
+        padding: 0 5px;
       }
     }
 
-    &__icon{
-      margin-right:10px;
+    &__icon {
+      margin-right: 10px;
       color: $onyx;
-      width:20px;
-      padding:0 5px;
+      width: 20px;
+      padding: 0 5px;
     }
   }
 }
@@ -90,33 +101,38 @@
   height: 38px;
   justify-content: space-between;
   align-items: center;
-  color:$true-blue;
+  color: $true-blue;
+
   &__left {
     display: flex;
     width: 90%;
-    padding:0 12px;
+    padding: 0 12px;
     height: 100%;
     align-items: center;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
       background-color: $lotion;
     }
 
     &__icon {
-      @extend .list-item__left__icon;
+      @extend .left-side-list-item__left__icon;
+
     }
 
     &__input-area {
-      width:90%;
+      width: 90%;
       height: 100%;
+
       &__input {
         background-color: transparent;
         border: none;
         outline: none;
-        width:90%;
+        width: 90%;
         height: 100%;
+
         &::placeholder {
-          color:$true-blue;
+          color: $true-blue;
           opacity: 1;
         }
 
@@ -125,19 +141,20 @@
   }
 
   &__right {
-    @extend .list-item__left__icon;
+    @extend .left-side-list-item__left__icon;
     margin-left: 5px;
     padding: 0 10px;
     height: 100%;
     margin-right: 0 !important;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
       background-color: $lotion;
     }
   }
 }
 
-.list-item {
+.left-side-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,7 +185,7 @@
     }
   }
 
-  &__right_click_menu{
+  &__right_click_menu {
     background-color: lightblue;
     padding: 20px;
   }

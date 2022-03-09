@@ -14,17 +14,17 @@ export class ListItem extends React.Component {
     render() {
         return (
             <div>
-                <div className={"list-item"}>
-                    <div className={"list-item__left"}>
-                        <div className={"list-item__left__icon"}>
+                <div className={"left-side-list-item"}>
+                    <div className={"left-side-list-item__left"}>
+                        <div className={"left-side-list-item__left__icon"}>
                             <FontAwesomeIcon icon={`${this.props.icon}`}/>
                         </div>
-                        <div className={"list-item__left__text"}>
+                        <div className={"left-side-list-item__left__text"}>
                             {this.props.title}
                         </div>
                     </div>
-                    <div className={"list-item__right"}>
-                        <div className={"list-item__rgiht__number"}>
+                    <div className={"left-side-list-item__right"}>
+                        <div className={"left-side-list-item__rgiht__number"}>
                             {this.props.number}
                         </div>
                     </div>
