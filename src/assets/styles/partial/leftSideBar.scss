@@ -64,10 +64,17 @@
     outline: transparent;
     padding: 0;
 
+    &__icon {
+      width: 25px !important;
+      height: 25px !important;
+    }
+
     li {
       padding: 10px;
       width: 200px;
       color: $onyx;
+      display: flex;
+      align-items: center;
 
       &:hover {
         background-color: $lotion;
@@ -78,11 +85,12 @@
     &__delete-item {
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       color: $cg-red !important;
+      display: flex;
 
       &__icon {
         margin-right: 10px;
         color: $cg-red;
-        width: 20px;
+        width: 25px !important;
         padding: 0 5px;
       }
     }
