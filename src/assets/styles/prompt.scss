@@ -81,6 +81,16 @@
 
       &__footer{
         padding:16px;
+        border-top: 1px solid #eaeaea;
+        &__button{
+          display: flex;
+          justify-content: center;
+          button{
+            background-color: $ultramarine-blue;
+            border:none;
+            color:white;
+          }
+        }
       }
 
     }

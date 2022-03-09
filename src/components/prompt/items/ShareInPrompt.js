@@ -1,11 +1,11 @@
-import letter from '../assets/img/letter_icon.png'
+import letter from '../../../assets/img/letter_icon.png'
 
 function ShareInPrompt() {
 
     return (
         <div className={"share-in-prompt"}>
             <div className={"share-in-prompt__letter"}>
-                <img src={letter}/>
+                <img src={letter} alt={""}/>
             </div>
             <div className={"share-in-prompt__letter-sub-text"}>
                 Invite some people. After they join, you'll see them here.

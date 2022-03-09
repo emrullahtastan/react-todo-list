@@ -1,0 +1,11 @@
+.print-in-prompt {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &__text {
+      font-weight: bold;
+    }
+  }
+}
