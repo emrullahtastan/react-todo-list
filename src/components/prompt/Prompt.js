@@ -44,7 +44,7 @@ function Prompt() {
                         </div>
                         <div className={`prompt-mask__wrapper__container__footer ${prompt.footer.visible === false ? 'hide' : ''}`}>
                             <div className={"prompt-mask__wrapper__container__footer__button"}>
-                                <button className={"btn"}>Print</button>
+                                <button className={"btn px-4 rounded"}>Print</button>
                             </div>
                         </div>
                     </div>

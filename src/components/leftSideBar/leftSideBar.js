@@ -8,7 +8,7 @@ import ContextMenu from "../ContextMenu";
 export class LeftSideBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menuList: data["menu-items"], userMenuList: data["user-menu-items"], leftVariable: false}
+        this.state = {menuList: data["menu-items"], userMenuList: data["user-menu-items"], leftVariable: false, title: null, index: null}
     }
 
     enterValueToNewList = (e) => {
@@ -18,11 +18,19 @@ export class LeftSideBar extends React.Component {
         }
     }
 
-    handleContextMenu = (e) => {
+    duplicateItem = () => {
+        this.setState({userMenuList: [...this.state.userMenuList, {"icon": "list", "title": this.state.title + " 2"}]});
+    }
+
+    deleteItem = () => {
+        this.state.userMenuList.splice(this.state.index, 1);
+    }
+
+    handleContextMenu = (e, title, index) => {
         let lyPos = e.clientY;
         if ((window.innerHeight - e.clientY) < 150)
             lyPos -= 150;
-        this.setState({leftVariable: true, xPos: e.clientX, yPos: lyPos})
+        this.setState({leftVariable: true, xPos: e.clientX, yPos: lyPos, title, index})
         e.preventDefault();
         document.addEventListener("click", this.closeContextMenu);
     }
@@ -40,7 +48,7 @@ export class LeftSideBar extends React.Component {
         return (
             <div className={"left-side-bar"}>
                 <div style={{height: '90%'}}>
-                    <ContextMenu left={this.state.leftVariable} xPos={this.state.xPos} yPos={this.state.yPos}/>
+                    <ContextMenu deleteItem={this.deleteItem} duplicate={this.duplicateItem} left={this.state.leftVariable} xPos={this.state.xPos} yPos={this.state.yPos}/>
                     <div className={"left-side-bar__top"}>
                         <div className={"left-side-bar__top__header"}>
                             <button className={"left-side-bar__top__header__button"}>
@@ -57,11 +65,12 @@ export class LeftSideBar extends React.Component {
                                 {this.state.userMenuList.map(function (object, i) {
                                     return (
                                         <div key={i} onContextMenu={(event) => {
-                                            this.handleContextMenu(event)
+                                            this.handleContextMenu(event, object.title, i)
                                         }}
                                              onClick={() => {
                                                  this.setState({leftVariable: false})
                                              }}
+
                                         >
                                             <ListItem title={object.title} icon={object.icon} number={object.number} contextMenuVisible={true}/>
                                         </div>

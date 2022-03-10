@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {PromptContext, useContext} from "../contexts/PromptContext";
 
-function ContextMenu({left, xPos = "0px", yPos = "0px"}) {
+function ContextMenu({left, xPos = "0px", yPos = "0px", duplicate, deleteItem}) {
 
     const {prompt, setPrompt} = useContext(PromptContext);
 
@@ -43,7 +43,7 @@ function ContextMenu({left, xPos = "0px", yPos = "0px"}) {
                 <FontAwesomeIcon className={"left-side-bar-right-context-menu__icon"} icon={"user-plus"}/>
                 Share list
             </li>
-            <li>
+            <li onClick={()=>{duplicate()}}>
                 <FontAwesomeIcon className={"left-side-bar-right-context-menu__icon"} icon={"copy"}/>
                 Duplicate list
             </li>
@@ -51,7 +51,7 @@ function ContextMenu({left, xPos = "0px", yPos = "0px"}) {
                 <FontAwesomeIcon className={"left-side-bar-right-context-menu__icon"} icon={"print"}/>
                 Print list
             </li>
-            <li className="left-side-bar-right-context-menu__delete-item">
+            <li onClick={()=>{deleteItem()}} className="left-side-bar-right-context-menu__delete-item">
                 <FontAwesomeIcon className={"left-side-bar-right-context-menu__delete-item__icon"} icon={"trash-alt"}/>
                 Delete List
             </li>
