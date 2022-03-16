@@ -75,7 +75,9 @@ export class LeftSideBar extends React.Component {
                                             this.onClickEvent({selectedMenuKey: 'menuList', selectedMenuIndex: i})
                                         }}>
                                             <ListItem title={object.title} icon={object.icon} number={object.number}
-                                                      selected={this.state.selectedMenuKey === 'menuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}/>
+                                                      selected={this.state.selectedMenuKey === 'menuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}
+                                                      path={object.path}
+                                            />
                                         </div>
                                     );
                                 }, this)}
@@ -91,7 +93,9 @@ export class LeftSideBar extends React.Component {
                                              }}
                                         >
                                             <ListItem title={object.title} icon={object.icon} number={object.number} contextMenuVisible={true}
-                                                      selected={this.state.selectedMenuKey === 'userMenuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}/>
+                                                      selected={this.state.selectedMenuKey === 'userMenuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}
+                                                      path={object.path}
+                                            />
                                         </div>
                                     );
                                 }, this)}

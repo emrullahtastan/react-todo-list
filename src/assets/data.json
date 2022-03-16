@@ -2,38 +2,46 @@
   "menu-items": [
     {
       "icon": "sun",
-      "title": "My Day"
+      "title": "My Day",
+      "path": "my-day"
     },
     {
       "icon": "star",
-      "title": "Important"
+      "title": "Important",
+      "path": "important"
     },
     {
       "icon": "calendar-alt",
       "title": "Planned",
-      "number": 1
+      "number": 1,
+      "path": "planned"
     },
     {
       "icon": "user",
-      "title": "Assigned to me"
+      "title": "Assigned to me",
+      "path": "assigned-to-me"
     },
     {
       "icon": "flag",
-      "title": "Flagged email"
+      "title": "Flagged email",
+      "path": "flaggged-email"
     },
     {
       "icon": "home",
-      "title": "Tasks"
+      "title": "Tasks",
+      "path": "tasks"
     }
   ],
   "user-menu-items": [
     {
       "icon": "list",
-      "title": "Writing article"
+      "title": "Writing article",
+      "path": "writing-article"
     },
     {
       "icon": "list",
-      "title": "Home notes"
+      "title": "Home notes",
+      "path": "home-notes"
     }
   ]
 }
