@@ -19,7 +19,7 @@ export class ListItem extends React.Component {
                         <div className={"left-side-list-item__left__icon"}>
                             <FontAwesomeIcon icon={`${this.props.icon}`}/>
                         </div>
-                        <div className={"left-side-list-item__left__text"}>
+                        <div className={`left-side-list-item__left__text ${this.props.selected ? 'selected' : null}`}>
                             {this.props.title}
                         </div>
                     </div>

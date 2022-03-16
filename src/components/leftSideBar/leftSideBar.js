@@ -8,7 +8,15 @@ import ContextMenu from "../ContextMenu";
 export class LeftSideBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {menuList: data["menu-items"], userMenuList: data["user-menu-items"], leftVariable: false, title: null, index: null}
+        this.state = {
+            menuList: data["menu-items"],
+            userMenuList: data["user-menu-items"],
+            leftVariable: false,
+            title: null,
+            index: null,
+            selectedMenuKey: "menuList",
+            selectedMenuIndex: 0
+        }
     }
 
     enterValueToNewList = (e) => {
@@ -42,6 +50,10 @@ export class LeftSideBar extends React.Component {
         }
     }
 
+    onClickEvent = ({selectedMenuKey, selectedMenuIndex}) => {
+        this.setState({leftVariable: false, selectedMenuKey, selectedMenuIndex})
+    }
+
     render() {
 
 
@@ -58,8 +70,15 @@ export class LeftSideBar extends React.Component {
                         <div className={"left-side-bar__top__middle"}>
                             <div className={"left-side-bar__middle__area"}>
                                 {this.state.menuList.map(function (object, i) {
-                                    return <ListItem key={i} title={object.title} icon={object.icon} number={object.number}/>;
-                                })}
+                                    return (
+                                        <div key={i} onClick={() => {
+                                            this.onClickEvent({selectedMenuKey: 'menuList', selectedMenuIndex: i})
+                                        }}>
+                                            <ListItem title={object.title} icon={object.icon} number={object.number}
+                                                      selected={this.state.selectedMenuKey === 'menuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}/>
+                                        </div>
+                                    );
+                                }, this)}
                             </div>
                             <div className={"left-side-bar__area"}>
                                 {this.state.userMenuList.map(function (object, i) {
@@ -68,11 +87,11 @@ export class LeftSideBar extends React.Component {
                                             this.handleContextMenu(event, object.title, i)
                                         }}
                                              onClick={() => {
-                                                 this.setState({leftVariable: false})
+                                                 this.onClickEvent({selectedMenuKey: 'userMenuList', selectedMenuIndex: i})
                                              }}
-
                                         >
-                                            <ListItem title={object.title} icon={object.icon} number={object.number} contextMenuVisible={true}/>
+                                            <ListItem title={object.title} icon={object.icon} number={object.number} contextMenuVisible={true}
+                                                      selected={this.state.selectedMenuKey === 'userMenuList' && this.state.selectedMenuIndex === i ? 'left-side-bar__middle__area__selected-menu' : null}/>
                                         </div>
                                     );
                                 }, this)}

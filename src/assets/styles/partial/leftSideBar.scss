@@ -188,8 +188,8 @@
       align-items: center;
     }
 
-    &__text {
-
+    &__text.selected {
+      font-weight: 500;
     }
   }
 
