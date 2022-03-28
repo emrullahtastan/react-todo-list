@@ -1,9 +1,13 @@
-import {useParams} from "react-router-dom";
+import ViewTasksHeader from "./viewTasksItems/ViewTasksHeader";
+import ViewTasksItem from "./viewTasksItems/ViewTasksItem";
 
 function ViewTasks() {
-    return (<div>
-        {useParams().path}
-    </div>)
+    return (
+        <div className={"view-tasks-frame"}>
+            <ViewTasksHeader/>
+            <ViewTasksItem/>
+        </div>
+    )
 }
 
 export default ViewTasks;

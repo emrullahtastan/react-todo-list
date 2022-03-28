@@ -6,6 +6,8 @@ import {faCog} from "@fortawesome/free-solid-svg-icons";
 import {faQuestion} from "@fortawesome/free-solid-svg-icons";
 import {faBullhorn} from "@fortawesome/free-solid-svg-icons";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
+
 
 export class Header extends React.Component {
     constructor(props) {
@@ -39,7 +41,7 @@ export class Header extends React.Component {
     render() {
         return (
             <div className={"header"}>
-                <div className={"header__brand"}>To Do</div>
+                <div className={"header__brand"}><Link to="/">To Do</Link></div>
                 <div className={"header__search-area"} onBlur={() => {
                     this.searchInputFocusOut()
                 }}>
@@ -72,7 +74,7 @@ export class Header extends React.Component {
                             <div className={`header__search-area__item  ${!this.state.searchInputVisible ? "w-100" : ""}`}>
                                 <button className={`header__search-area__item__button  
                             ${!this.state.searchInputVisible ? "" : "header__search-area__item__button--active"}`} onClick={this.searchInputVisible.bind(this, false)}>
-                                    <FontAwesomeIcon className={"header__search-area__item__button__icon"} icon={faTimes}/>
+                                    <FontAwesomeIcon className={"header__search-area__item__button__icon header__search-area__item__button__icon-times"} icon={faTimes}/>
                                 </button>
                             </div>
                         </div>

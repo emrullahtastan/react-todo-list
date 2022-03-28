@@ -1,0 +1,45 @@
+.view-tasks-frame {
+  padding: 20px 20px;
+  width: 100%;
+
+  &__header {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+
+      &__left {
+        display: flex;
+        align-items: center;
+
+        &__text {
+          color: $celtic-blue;
+          font-size: 1.5rem;
+          font-weight: 500;
+        }
+
+        &__menu {
+          margin-left: 20px;
+          color: $sonic-silver;
+          padding:5px 10px;
+          &:hover{
+            background-color: $bright-gray;
+            border-radius: 2px;
+            cursor:pointer;
+          }
+        }
+      }
+
+      &__right {
+        display: flex;
+
+        &__sort {
+
+        }
+
+        &__share {
+
+        }
+      }
+    }
+  }
+}

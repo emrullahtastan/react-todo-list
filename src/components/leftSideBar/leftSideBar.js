@@ -21,13 +21,13 @@ export class LeftSideBar extends React.Component {
 
     enterValueToNewList = (e) => {
         if (e.key === 'Enter') {
-            this.setState({userMenuList: [...this.state.userMenuList, {"icon": "list", "title": e.target.value}]});
+            this.setState({userMenuList: [...this.state.userMenuList, {"icon": "list", "title": e.target.value, "path": e.target.value}]});
             e.target.value = "";
         }
     }
 
     duplicateItem = () => {
-        this.setState({userMenuList: [...this.state.userMenuList, {"icon": "list", "title": this.state.title + " 2"}]});
+        this.setState({userMenuList: [...this.state.userMenuList, {"icon": "list", "title": this.state.title + " 2", "path": this.state.title}]});
     }
 
     deleteItem = () => {
@@ -55,8 +55,6 @@ export class LeftSideBar extends React.Component {
     }
 
     render() {
-
-
         return (
             <div className={"left-side-bar"}>
                 <div style={{height: '90%'}}>
