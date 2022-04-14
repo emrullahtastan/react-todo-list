@@ -1,5 +1,5 @@
 import {PromptContext} from './PromptContext.js'
-import Prompt from "../components/prompt/Prompt";
+import Prompt from "../tools/prompt/Prompt";
 import {useState} from "react";
 import PromptDefaultValues from "./PromptDefaultValues";
 
