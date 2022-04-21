@@ -10,6 +10,7 @@
       &__left {
         display: flex;
         align-items: center;
+        justify-content: center;
 
         &__text {
           color: $celtic-blue;
@@ -18,7 +19,7 @@
         }
 
         &__menu {
-          margin-left: 20px;
+          //margin-left: 20px;
           color: $sonic-silver;
           padding:5px 10px;
           &:hover{

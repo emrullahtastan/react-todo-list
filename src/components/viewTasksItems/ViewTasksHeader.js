@@ -12,7 +12,7 @@ function ViewTasksHeader() {
             <div className={"view-tasks-frame__header__top"}>
                 <div className={"view-tasks-frame__header__top__left"}>
                     <div className={"view-tasks-frame__header__top__left__text"}>{title}</div>
-                    <Tooltip data={<div>test</div>}>
+                    <Tooltip data={"List options menu this click opening full sentence example"}>
                         <div className={"view-tasks-frame__header__top__left__menu"}>
                             <FontAwesomeIcon icon={faEllipsisH}/>
                         </div>
