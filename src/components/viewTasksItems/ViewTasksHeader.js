@@ -2,7 +2,8 @@ import {useParams} from "react-router-dom";
 import {viewTasks} from '../../network/apiFactory'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEllipsisH, faUserFriends, faSort} from "@fortawesome/free-solid-svg-icons";
-import Tooltip from "../../tools/tooltip/Tooltip";
+import Tooltip from "react-riq-tooltip";
+import "react-riq-tooltip/dist/index.css";
 
 function ViewTasksHeader() {
     let key = useParams().path;
